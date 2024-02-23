@@ -27,3 +27,5 @@ let implicitString: String = assuntaStringa // scartato automaticamente
 
 
 print("Ciao sono una modifica su devel")
+
+print("Ciao sono una modifica su pippo")
