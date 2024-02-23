@@ -21,7 +21,9 @@ guard let number = convertedNumber else {
 let possibleString: String? = "Una stringa opzionale"
 let forcedString: String = possibleString! // richiede lo scartamento esplicito
 
-let assumedString: String! = "Una stringa facoltativa implicitamente scartata."
-let implicitString: String = assumedString // scartato automaticamente
+let assuntaStringa: String! = "Una stringa facoltativa implicitamente scartata."
+let implicitString: String = assuntaStringa // scartato automaticamente
 
-print("Hello World")
+
+
+print("Prova devel")
