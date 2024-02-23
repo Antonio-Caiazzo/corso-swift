@@ -24,3 +24,4 @@ let forcedString: String = possibleString! // richiede lo scartamento esplicito
 let assumedString: String! = "Una stringa facoltativa implicitamente scartata."
 let implicitString: String = assumedString // scartato automaticamente
 
+print("Hello World")
