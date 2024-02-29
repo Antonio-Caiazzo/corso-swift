@@ -24,3 +24,7 @@ type(of: unaryPostFix)
 // 3. binary infix
 let result = 1 + 2
 let names = "Foo" + " " + "Bar"
+
+// Operatore ternario
+let age = 20
+let message = age > 18 ? "Sei maggiorenne" : "Sei minorenne"
