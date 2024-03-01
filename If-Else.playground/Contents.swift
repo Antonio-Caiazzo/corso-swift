@@ -13,7 +13,7 @@ if myName == "Tony" && myAge == 30 {
     "Oops, ho sbagliato"
 }
 
-if (myName == "Tony" && myAge == 22) && (yourName == "Foo" || yourAge == 18) {
+if (myName == "Tony" && myAge == 22) && (yourName == "Foo" || yourAge == 19) {
     "My name is Tony and I'm 20... AND... your name is Foo or you are 19"
 } else {
     "Hmmm, non ha funzionato bene"
