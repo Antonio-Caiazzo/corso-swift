@@ -232,6 +232,35 @@
 
 import SwiftUI
 
+struct FlagImage: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        content
+            .clipShape(.capsule)
+            .shadow(radius: 5)
+    }
+}
+
+extension View {
+    func imageStyle() -> some View {
+        modifier(FlagImage())
+    }
+}
+
+struct ProminentTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundStyle(.blue)
+    }
+}
+
+extension View {
+    func prominentTitleStyle() -> some View {
+        modifier(ProminentTitle())
+    }
+}
+
 struct ContentView: View {
     
     @State private var showingScore = false
@@ -279,8 +308,7 @@ struct ContentView: View {
                             flagTapped(number)
                         } label: {
                             Image(countries[number])
-                                .clipShape(.capsule)
-                                .shadow(radius: 5)
+                                .imageStyle()
                         }
                     }
                     
