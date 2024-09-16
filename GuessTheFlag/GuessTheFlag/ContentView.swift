@@ -270,6 +270,8 @@ struct ContentView: View {
     @State private var correctAnswer = Int.random(in: 0...2)
     @State var score = 0
     @State var questionCount = 1
+    @State private var selectedTap: Int? = nil
+    
     
     private let totalquestions = 8
     
@@ -310,6 +312,13 @@ struct ContentView: View {
                             Image(countries[number])
                                 .imageStyle()
                         }
+                        .rotation3DEffect(
+                            .degrees(selectedTap == number ? 360 : 0),
+                                                  axis: (x: 0.0, y: 1.0, z: 0.0)
+                        )
+                        .opacity(selectedTap == nil || selectedTap == number ? 1 : 0.25)
+                        .scaleEffect(selectedTap == nil || selectedTap == number ? 1 : 0.75)
+                        .animation(.easeInOut, value: selectedTap)
                     }
                     
                 }
@@ -333,6 +342,9 @@ struct ContentView: View {
     }
     
     func flagTapped(_ number: Int) {
+        
+        selectedTap = number
+        
         if number == correctAnswer {
             scoreTitle = "Correct"
             score += 1
@@ -346,11 +358,13 @@ struct ContentView: View {
             questionCount += 1
             showingScore = true
         }
+        
     }
     
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        selectedTap = nil
     }
     
     func reset() {
@@ -358,6 +372,7 @@ struct ContentView: View {
         correctAnswer = Int.random(in: 0...2)
         score = 0
         questionCount = 0
+        selectedTap = nil
     }
 }
 
